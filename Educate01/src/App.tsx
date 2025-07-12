@@ -1,6 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router";
-import ReactDom from "react-dom/client";
-import React from "react";
+import { Routes, Route } from "react-router";
 
 import Home from "./pages/Home";
 
