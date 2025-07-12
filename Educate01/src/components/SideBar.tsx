@@ -3,18 +3,24 @@ import { Link } from "react-router";
 
 export const SideBar = () => {
   return (
-    <nav>
-      <div>
-        <FaApple></FaApple>
+    <nav className="bg-red-300 w-[200px] min-h-screen flex flex-col">
+      <div className="h-14 flex items-center justify-center">
+        <FaApple className="text-white text-4xl" />
       </div>
-      <div>
-        <Link to={"#"} className="flex flex-row mt-5">
-          <FaAngleRight className="text-2xl" />
-          <span className="ml-3 text-xl">Sistema</span>
+      <div className="flex flex-col p-4">
+        <Link
+          to={"#"}
+          className="flex flex-row items-center text-white hover:bg-red-400 p-2 rounded transition-colors"
+        >
+          <FaAngleRight className="text-xl" />
+          <span className="ml-3 text-lg">Sistema</span>
         </Link>
-        <Link to={"#"} className="flex flex-row mt-5">
-          <FaAngleRight className="text-2xl" />
-          <span className="ml-3 text-xl">Graficas</span>
+        <Link
+          to={"#"}
+          className="flex flex-row items-center text-white hover:bg-red-400 p-2 rounded transition-colors mt-2"
+        >
+          <FaAngleRight className="text-xl" />
+          <span className="ml-3 text-lg">Graficas</span>
         </Link>
       </div>
     </nav>
