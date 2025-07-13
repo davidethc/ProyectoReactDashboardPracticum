@@ -1,7 +1,9 @@
 import { FaAngleRight } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useEffect } from "react";
 
 import { useAppDispatch, useAppSelector } from "../store/store";
+import materiasService from "../services/materiasService";
 import { toggleSideBar } from "../store/sidabarSlice";
 
 export const SideBar = () => {
@@ -13,6 +15,19 @@ export const SideBar = () => {
       dispatch(toggleSideBar());
     }
   };
+
+  useEffect(() => {
+    const checkApi = async () => {
+      try {
+        const response = await materiasService.getTopMaterias();
+        console.log("API Response:", response);
+      } catch (error) {
+        console.error("Error calling API:", error);
+      }
+    };
+
+    checkApi();
+  }, []);
 
   return (
     <>
