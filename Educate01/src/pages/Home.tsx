@@ -13,7 +13,7 @@ export default function Home() {
         <header className="h-14 bg-blue-300 flex flex-row items-center px-4 relative">
           <button
             className="text-white hover:bg-blue-500 p-2 rounded transition-colors"
-            onClick={() => dispatch(openSideBar!())}
+            onClick={() => dispatch(openSideBar())}
           >
             <FaAlignJustify size={24} />
           </button>
