@@ -16,19 +16,6 @@ export const SideBar = () => {
     }
   };
 
-  useEffect(() => {
-    const checkApi = async () => {
-      try {
-        const response = await materiasService.getTopMaterias();
-        console.log("API Response:", response);
-      } catch (error) {
-        console.error("Error calling API:", error);
-      }
-    };
-
-    checkApi();
-  }, []);
-
   return (
     <>
       {isOpen && <div className="fixed inset-0" onClick={handleOverlayClick} />}
