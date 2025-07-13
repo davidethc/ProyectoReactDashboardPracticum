@@ -1,36 +1,28 @@
 import { FaAngleRight, FaApple } from "react-icons/fa";
 import { Link } from "react-router";
 
-import { closeSideBar } from "../store/sidabarSlice";
 import { useAppSelector } from "../store/store";
-import { useAppDispatch } from "../store/store";
 
 export const SideBar = () => {
   const isSidebarOpen = useAppSelector((state) => state.sidebar.value);
-  const dispatch = useAppDispatch();
 
   return (
     <nav
-      className={`bg-red-300 w-[200px] min-h-screen flex flex-col fixed transition-all duration-300 ${
-        isSidebarOpen ? "left-0" : "-left-[200px]"
+      className={`fixed top-14 left-0 h-[calc(100%-3.5rem)] bg-red-300 w-[200px] transform transition-all duration-300 ${
+        isSidebarOpen ? "translate-x-0" : "-translate-x-full"
       }`}
     >
-      <div className="h-14 flex items-center justify-center">
-        <FaApple className="text-white text-4xl" />
-      </div>
-      <div className="flex flex-col p-4">
+      <div className="flex flex-col p-4 space-y-2">
         <Link
-          onClick={() => dispatch(closeSideBar())}
           to={"#"}
-          className="flex flex-row items-center text-white hover:bg-red-400 p-2 rounded transition-colors"
+          className="flex items-center text-white hover:bg-red-400 p-3 rounded-lg transition-colors"
         >
           <FaAngleRight className="text-xl" />
           <span className="ml-3 text-lg">Sistema</span>
         </Link>
         <Link
-          onClick={() => dispatch(closeSideBar())}
           to={"#"}
-          className="flex flex-row items-center text-white hover:bg-red-400 p-2 rounded transition-colors mt-2"
+          className="flex items-center text-white hover:bg-red-400 p-3 rounded-lg transition-colors"
         >
           <FaAngleRight className="text-xl" />
           <span className="ml-3 text-lg">Graficas</span>
