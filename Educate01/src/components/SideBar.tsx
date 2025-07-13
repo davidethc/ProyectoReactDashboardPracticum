@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { useEffect } from "react";
 
 import { useAppDispatch, useAppSelector } from "../store/store";
-import materiasService from "../services/materiasService";
 import { toggleSideBar } from "../store/sidabarSlice";
 
 export const SideBar = () => {

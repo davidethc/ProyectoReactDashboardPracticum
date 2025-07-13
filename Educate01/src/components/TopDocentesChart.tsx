@@ -9,16 +9,16 @@ import {
   Bar,
 } from "recharts";
 
-interface TopMateria {
-  asignatura: string;
+interface TopDocente {
+  docente: string;
   total: number;
 }
 
-interface TopMateriasChartProps {
-  data: TopMateria[];
+interface TopDocentesChartProps {
+  data: TopDocente[];
 }
 
-export const TopMateriasChart = ({ data }: TopMateriasChartProps) => {
+export const TopDocentesChart = ({ data }: TopDocentesChartProps) => {
   const chartData = [...data].sort((a, b) => a.total - b.total);
 
   return (
@@ -37,7 +37,7 @@ export const TopMateriasChart = ({ data }: TopMateriasChartProps) => {
         <XAxis type="number" />
         <YAxis
           type="category"
-          dataKey="asignatura"
+          dataKey="docente"
           width={120}
           tick={{ fontSize: 12 }}
         />
@@ -46,7 +46,7 @@ export const TopMateriasChart = ({ data }: TopMateriasChartProps) => {
         <Bar
           dataKey="total"
           name="Total Actividades"
-          fill="#3B82F6"
+          fill="#22C55E"
           radius={[0, 4, 4, 0]}
         />
       </BarChart>

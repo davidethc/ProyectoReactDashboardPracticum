@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
 
-import { getTopAsignaturasPorAnio } from "../services/materiasService";
+import { getTopDocentesPorAnio } from "../services/docentesService";
 
-interface TopMateria {
-  asignatura: string;
+interface TopDocente {
+  docente: string;
   total: number;
 }
 
-export const useTopMaterias = (year: number) => {
-  const [data, setData] = useState<TopMateria[]>([]);
+export const useTopDocentes = (year: number) => {
+  const [data, setData] = useState<TopDocente[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<Error | null>(null);
 
@@ -16,7 +16,7 @@ export const useTopMaterias = (year: number) => {
     const fetchData = async () => {
       try {
         setIsLoading(true);
-        const response = await getTopAsignaturasPorAnio(year);
+        const response = await getTopDocentesPorAnio(year);
         setData(response);
         setError(null);
       } catch (err) {
