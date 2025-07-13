@@ -1,11 +1,12 @@
 import { FaAlignJustify } from "react-icons/fa";
 
-import { openSideBar } from "../store/sidabarSlice";
+import { toggleSideBar } from "../store/sidabarSlice";
 import { SideBar } from "../components/SideBar";
 import { useAppDispatch } from "../store/store";
 
 export default function Home() {
   const dispatch = useAppDispatch();
+
   return (
     <div className="min-h-screen flex">
       <SideBar />
@@ -13,7 +14,7 @@ export default function Home() {
         <header className="h-14 bg-blue-300 flex flex-row items-center px-4 relative">
           <button
             className="text-white hover:bg-blue-500 p-2 rounded transition-colors"
-            onClick={() => dispatch(openSideBar())}
+            onClick={() => dispatch(toggleSideBar())}
           >
             <FaAlignJustify size={24} />
           </button>
